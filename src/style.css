@@ -1,0 +1,52 @@
+:root {
+  --bg: #fbfbfd;
+  --ink: #1a1a1f;
+  --muted: #6b6b76;
+  --line: #e5e5ea;
+  --brand: #e8590c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.page { max-width: 960px; margin: 0 auto; padding: 72px 24px; }
+
+h1 { font-size: 40px; letter-spacing: -0.02em; margin: 0 0 8px; }
+.sub { color: var(--muted); margin: 0 0 40px; }
+
+.tiers { display: grid; gap: 20px; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .tiers { grid-template-columns: 1fr 1fr; } }
+
+.tier {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+  background: #fff;
+}
+.tier--featured { border-color: var(--brand); box-shadow: 0 8px 28px rgb(232 89 12 / 0.08); }
+
+.tier h2 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 12px; }
+.price { font-size: 38px; font-weight: 650; margin: 0 0 20px; }
+.price span { font-size: 15px; font-weight: 400; color: var(--muted); }
+
+.tier ul { list-style: none; padding: 0; margin: 0 0 24px; }
+.tier li { padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.tier li:last-child { border-bottom: 0; }
+
+.btn {
+  width: 100%;
+  padding: 11px 16px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  font: inherit;
+  font-weight: 550;
+  cursor: pointer;
+}
+.btn--primary { background: var(--brand); border-color: var(--brand); color: #fff; }

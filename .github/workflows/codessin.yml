@@ -1,0 +1,32 @@
+name: Codessin capture
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    # Capture never blocks a build; this is belt and braces for the steps above.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - run: npm install
+
+      # CODESSIN_CAPTURE goes on the BUILD, not the capture step: it is what
+      # turns on the anchors plugin, and why production builds are unaffected.
+      - run: npm run build
+        env:
+          CODESSIN_CAPTURE: "1"
+
+      - uses: codessin-dev/capture-action@v0.1.0
+        with:
+          api-key: ${{ secrets.CODESSIN_API_KEY }}
+          api-url: ${{ vars.CODESSIN_API_URL }}

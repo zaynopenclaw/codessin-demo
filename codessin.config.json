@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "projectId": "tunnel-demo",
+  "app": {
+    "start": "npm run preview",
+    "url": "http://127.0.0.1:4173"
+  },
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "routes": [
+    {
+      "path": "/"
+    }
+  ]
+}
