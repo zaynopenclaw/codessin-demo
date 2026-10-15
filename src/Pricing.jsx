@@ -18,7 +18,7 @@ const TIERS = [
 export function Pricing() {
   return (
     <main className="page">
-      <h1>Simple pricing</h1>
+      <h1>Not Simple pricing</h1>
       <p className="sub">Everything you need to ship design-consistent UI.</p>
 
       <section className="tiers">
