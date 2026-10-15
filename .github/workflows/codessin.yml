@@ -26,7 +26,7 @@ jobs:
         env:
           CODESSIN_CAPTURE: "1"
 
-      - uses: codessin-dev/capture-action@v0.1.1
+      - uses: codessin-dev/capture-action@v0.1.2
         with:
           api-key: ${{ secrets.CODESSIN_API_KEY }}
           api-url: ${{ vars.CODESSIN_API_URL }}
