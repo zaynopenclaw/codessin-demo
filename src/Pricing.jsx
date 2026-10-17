@@ -19,6 +19,7 @@ export function Pricing() {
   return (
     <main className="page">
       <h1>Not Simple pricing</h1>
+      <h2>New heading</h2>
       <p className="sub">Everything you need to ship design-consistent UI.</p>
 
       <section className="tiers">
